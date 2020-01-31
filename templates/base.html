@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+  <div class = "header">
+    <a class= "header-font" href="/blog">
+      Our Group's Blog!!!
+    </a>
+  </div>
+  </div>
+  <title>Group Blog</title>
+</header>
+
+<body>
+  
+  
+
+  <div class="login-area">
+    {% if user %}
+      {{user.name}} (<a class="login-link" href="/logout">logout</a>)
+    {% else %}
+      <a class="login-link" href="/login">login</a>
+      <a class="login-link" href="/signup">signup</a>
+    {% endif %}
+  </div>
+
+  <div id="content">      
+    <div class = "newPost-area"> 
+      <a class = "newPost-link" href="/blog/newpost"> Make a New Post!!! </a> 
+  </div>
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+
+</html>
+
